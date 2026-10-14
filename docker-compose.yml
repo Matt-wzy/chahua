@@ -5,8 +5,7 @@ services:
     ports:
       - 80:80
     volumes:
-      # Built by: cd wetty-chat-mobile && npm ci && npm run build:stg (output: wetty-chat-mobile/dist)
-      - ./wetty-chat-mobile/dist:/usr/share/nginx/html:ro
+      - ./wetty-chat-mobile/www:/usr/share/nginx/html:ro # cd wetty-chat-mobile && npm ci && npm run build
       - ./default.conf:/etc/nginx/conf.d/default.conf:ro
   postgres:
     restart: unless-stopped
